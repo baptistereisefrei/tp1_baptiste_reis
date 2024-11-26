@@ -20,3 +20,15 @@ Sending 5, 100-byte ICMP Echos to 8.8.8.8, timeout is 2 seconds:
 !!!!!
 Success rate is 100 percent (5/5), round-trip min/avg/max = 60/72/92 ms
 ```
+### Configuration d'un NAT simpliste
+
+```
+PC1> ping 8.8.8.8
+
+84 bytes from 8.8.8.8 icmp_seq=1 ttl=114 time=40.458 ms
+84 bytes from 8.8.8.8 icmp_seq=2 ttl=114 time=34.807 ms
+84 bytes from 8.8.8.8 icmp_seq=3 ttl=114 time=38.737 ms
+84 bytes from 8.8.8.8 icmp_seq=4 ttl=114 time=35.747 ms
+84 bytes from 8.8.8.8 icmp_seq=5 ttl=114 time=42.884 ms
+
+```
