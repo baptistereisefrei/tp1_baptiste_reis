@@ -145,4 +145,14 @@ sudo python icmp_basic_receiver.py
 Message reçu : Hello, ICMP exfiltration
 Message reçu : Hello, ICMP exfiltration
 ```
+#### Remediation
 
+- Filtrer les paquets ICMP : Configurez un pare-feu pour bloquer ou limiter les paquets ICMP sortants contenant des charges utiles inhabituelles.
+- Surveiller le trafic réseau : Implémentez des outils comme IDS/IPS (ex. : Snort) ou Wireshark pour détecter les paquets ICMP contenant des charges utiles suspectes ou des flux inhabituels. Activez des alertes pour tout trafic ICMP anormal.
+
+### STP (attaque 3)
+
+
+#### Remediation
+
+- Activer BPDU Guard sur les ports des utilisateurs : Cette fonctionnalité désactive automatiquement un port recevant des trames BPDU inattendues, empêchant ainsi les périphériques non autorisés de perturber la topologie STP.
