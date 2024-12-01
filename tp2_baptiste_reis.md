@@ -62,3 +62,32 @@ PC4> ping 8.8.8.8
 84 bytes from 8.8.8.8 icmp_seq=5 ttl=114 time=44.632 ms
 
 ```
+### Attaque arp
+
+#### Poisoning
+
+```
+PC1> arp
+
+08:00:27:ad:25:87  10.2.1.114 expires in 90 seconds
+aa:bb:cc:dd:ee:ff  10.2.1.14 expires in 113 seconds
+
+```
+
+#### Spoofing
+
+```
+
+PC1> arp
+
+08:00:27:ad:25:87  10.2.1.114 expires in 48 seconds
+08:00:27:ad:25:87  10.2.1.52 expires in 120 seconds
+
+PC1> ping 10.2.1.52
+
+84 bytes from 10.2.1.52 icmp_seq=1 ttl=63 time=9.679 ms
+84 bytes from 10.2.1.52 icmp_seq=2 ttl=63 time=6.372 ms
+84 bytes from 10.2.1.52 icmp_seq=3 ttl=63 time=6.688 ms
+84 bytes from 10.2.1.52 icmp_seq=4 ttl=63 time=7.906 ms
+84 bytes from 10.2.1.52 icmp_seq=5 ttl=63 time=7.871 ms
+```
