@@ -91,3 +91,21 @@ PC1> ping 10.2.1.52
 84 bytes from 10.2.1.52 icmp_seq=4 ttl=63 time=7.906 ms
 84 bytes from 10.2.1.52 icmp_seq=5 ttl=63 time=7.871 ms
 ```
+### Man in the middle
+
+```
+PC1> arp
+
+08:00:27:ad:25:87  10.2.1.114 expires in 31 seconds
+08:00:27:ad:25:87  10.2.1.254 expires in 120 seconds
+```
+```
+R1#show arp
+Protocol  Address          Age (min)  Hardware Addr   Type   Interface
+Internet  10.2.1.11              25   0800.2789.6765  ARPA   FastEthernet1/0
+Internet  192.168.122.1           0   5254.00d1.e503  ARPA   FastEthernet0/0
+Internet  10.2.1.51               0   0800.27ad.2587  ARPA   FastEthernet1/0
+Internet  192.168.122.81          -   ca01.0534.0000  ARPA   FastEthernet0/0
+Internet  10.2.1.114              1   0800.27ad.2587  ARPA   FastEthernet1/0
+Internet  10.2.1.254              -   ca01.0534.001c  ARPA   FastEthernet1/0
+```
