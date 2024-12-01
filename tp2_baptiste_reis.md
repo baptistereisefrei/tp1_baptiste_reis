@@ -109,3 +109,24 @@ Internet  192.168.122.81          -   ca01.0534.0000  ARPA   FastEthernet0/0
 Internet  10.2.1.114              1   0800.27ad.2587  ARPA   FastEthernet1/0
 Internet  10.2.1.254              -   ca01.0534.001c  ARPA   FastEthernet1/0
 ```
+### Remediation
+
+#### Fixez les adresses IP et MAC importantes (passerelle, serveurs critiques) directement dans les tables ARP des machines :
+
+- sudo arp -s <ip_address> <mac_address>
+
+#### Activer Dynamic ARP Inspection (DAI) :
+
+Configurez cette fonctionnalité sur les switches gérés :
+
+Exemple Cisco :
+
+- ip arp inspection vlan <vlan_id>
+- ip dhcp snooping
+
+#### Utiliser HTTPS et SSL/TLS
+
+Chiffrez les communications réseau pour empêcher le vol d'informations sensibles, même en cas d'interception :
+
+- Implémentez HTTPS pour les sites web et HSTS pour forcer son utilisation.
+- Assurez-vous que les connexions à distance utilisent SSH, VPN ou TLS.
